@@ -17,16 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Syntax
-pd.qcut(series, interval, label)
+# dataframe about petal width (Equeal Frequency Interval)
+data_petal_width_ef_binning
 ------------------
 
 [0;31m[0m
 [0;31mNameError[0mTraceback (most recent call last)
-[0;32m<ipython-input-50-bed9f38d46cb>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;31m# Syntax[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mpd[0m[0;34m.[0m[0mqcut[0m[0;34m([0m[0mseries[0m[0;34m,[0m [0minterval[0m[0;34m,[0m [0mlabel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-66-6e55efc17def>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# dataframe about petal width (Equeal Frequency Interval)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mdata_petal_width_ef_binning[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'series' is not defined
-NameError: name 'series' is not defined
+[0;31mNameError[0m: name 'data_petal_width_ef_binning' is not defined
+NameError: name 'data_petal_width_ef_binning' is not defined
 
