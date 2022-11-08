@@ -17,16 +17,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# dataframe about petal width (Equeal Frequency Interval)
-data_petal_width_ef_binning
+# load data set
+data = arff.loadarff("/content/drive/MyDrive/datamining/tugas/notebooks-assignement/asset/messidor_features.arff")
 ------------------
 
 [0;31m[0m
-[0;31mNameError[0mTraceback (most recent call last)
-[0;32m<ipython-input-66-6e55efc17def>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;31m# dataframe about petal width (Equeal Frequency Interval)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mdata_petal_width_ef_binning[0m[0;34m[0m[0;34m[0m[0m
+[0;31mFileNotFoundError[0mTraceback (most recent call last)
+[0;32m<ipython-input-128-ec093bc00150>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# load data set[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mdata[0m [0;34m=[0m [0marff[0m[0;34m.[0m[0mloadarff[0m[0;34m([0m[0;34m"/content/drive/MyDrive/datamining/tugas/notebooks-assignement/asset/messidor_features.arff"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'data_petal_width_ef_binning' is not defined
-NameError: name 'data_petal_width_ef_binning' is not defined
+[0;32m/usr/local/lib/python3.7/dist-packages/scipy/io/arff/arffread.py[0m in [0;36mloadarff[0;34m(f)[0m
+[1;32m    798[0m         [0mofile[0m [0;34m=[0m [0mf[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    799[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 800[0;31m         [0mofile[0m [0;34m=[0m [0mopen[0m[0;34m([0m[0mf[0m[0;34m,[0m [0;34m'rt'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    801[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    802[0m         [0;32mreturn[0m [0m_loadarff[0m[0;34m([0m[0mofile[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/content/drive/MyDrive/datamining/tugas/notebooks-assignement/asset/messidor_features.arff'
+FileNotFoundError: [Errno 2] No such file or directory: '/content/drive/MyDrive/datamining/tugas/notebooks-assignement/asset/messidor_features.arff'
 
