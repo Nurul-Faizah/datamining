@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from sklearn.neighbors import KNeighborsClassifier
+# Create KNN classifier
+knn = KNeighborsClassifier(n_neighbors = 23)
+# Fit the classifier to the data
+knn.fit(X_train,y_train)
+------------------
+
+[0;31m[0m
+[0;31mValueError[0mTraceback (most recent call last)
+[0;32m<ipython-input-9-13ab367fe8a2>[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0mknn[0m [0;34m=[0m [0mKNeighborsClassifier[0m[0;34m([0m[0mn_neighbors[0m [0;34m=[0m [0;36m23[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;31m# Fit the classifier to the data[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m [0mknn[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX_train[0m[0;34m,[0m[0my_train[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/usr/local/lib/python3.8/dist-packages/sklearn/neighbors/_classification.py[0m in [0;36mfit[0;34m(self, X, y)[0m
+[1;32m    196[0m         [0mself[0m[0;34m.[0m[0mweights[0m [0;34m=[0m [0m_check_weights[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mweights[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    197[0m [0;34m[0m[0m
+[0;32m--> 198[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_fit[0m[0;34m([0m[0mX[0m[0;34m,[0m [0my[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    199[0m [0;34m[0m[0m
+[1;32m    200[0m     [0;32mdef[0m [0mpredict[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mX[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.8/dist-packages/sklearn/neighbors/_base.py[0m in [0;36m_fit[0;34m(self, X, y)[0m
+[1;32m    398[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0m_get_tags[0m[0;34m([0m[0;34m)[0m[0;34m[[0m[0;34m"requires_y"[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    399[0m             [0;32mif[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0mX[0m[0;34m,[0m [0;34m([0m[0mKDTree[0m[0;34m,[0m [0mBallTree[0m[0;34m,[0m [0mNeighborsBase[0m[0;34m)[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 400[0;31m                 [0mX[0m[0;34m,[0m [0my[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_validate_data[0m[0;34m([0m[0mX[0m[0;34m,[0m [0my[0m[0;34m,[0m [0maccept_sparse[0m[0;34m=[0m[0;34m"csr"[0m[0;34m,[0m [0mmulti_output[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    401[0m [0;34m[0m[0m
+[1;32m    402[0m             [0;32mif[0m [0mis_classifier[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.8/dist-packages/sklearn/base.py[0m in [0;36m_validate_data[0;34m(self, X, y, reset, validate_separately, **check_params)[0m
+[1;32m    579[0m                 [0my[0m [0;34m=[0m [0mcheck_array[0m[0;34m([0m[0my[0m[0;34m,[0m [0;34m**[0m[0mcheck_y_params[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    580[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 581[0;31m                 [0mX[0m[0;34m,[0m [0my[0m [0;34m=[0m [0mcheck_X_y[0m[0;34m([0m[0mX[0m[0;34m,[0m [0my[0m[0;34m,[0m [0;34m**[0m[0mcheck_params[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    582[0m             [0mout[0m [0;34m=[0m [0mX[0m[0;34m,[0m [0my[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    583[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.8/dist-packages/sklearn/utils/validation.py[0m in [0;36mcheck_X_y[0;34m(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)[0m
+[1;32m    962[0m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"y cannot be None"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    963[0m [0;34m[0m[0m
+[0;32m--> 964[0;31m     X = check_array(
+[0m[1;32m    965[0m         [0mX[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    966[0m         [0maccept_sparse[0m[0;34m=[0m[0maccept_sparse[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.8/dist-packages/sklearn/utils/validation.py[0m in [0;36mcheck_array[0;34m(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)[0m
+[1;32m    744[0m                     [0marray[0m [0;34m=[0m [0marray[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m,[0m [0mcasting[0m[0;34m=[0m[0;34m"unsafe"[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    745[0m                 [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 746[0;31m                     [0marray[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0masarray[0m[0;34m([0m[0marray[0m[0;34m,[0m [0morder[0m[0;34m=[0m[0morder[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    747[0m             [0;32mexcept[0m [0mComplexWarning[0m [0;32mas[0m [0mcomplex_warning[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    748[0m                 raise ValueError(
+
+[0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/generic.py[0m in [0;36m__array__[0;34m(self, dtype)[0m
+[1;32m   1991[0m [0;34m[0m[0m
+[1;32m   1992[0m     [0;32mdef[0m [0m__array__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdtype[0m[0;34m:[0m [0mNpDtype[0m [0;34m|[0m [0;32mNone[0m [0;34m=[0m [0;32mNone[0m[0;34m)[0m [0;34m->[0m [0mnp[0m[0;34m.[0m[0mndarray[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1993[0;31m         [0;32mreturn[0m [0mnp[0m[0;34m.[0m[0masarray[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_values[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1994[0m [0;34m[0m[0m
+[1;32m   1995[0m     def __array_wrap__(
+
+[0;31mValueError[0m: could not convert string to float: 'O'
+ValueError: could not convert string to float: 'O'
+
