@@ -28,18 +28,18 @@ drive.mount('/content/drive/My Drive/')
 [0;32m----> 2[0;31m [0mdrive[0m[0;34m.[0m[0mmount[0m[0;34m([0m[0;34m'/content/drive/My Drive/'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/usr/local/lib/python3.8/dist-packages/google/colab/drive.py[0m in [0;36mmount[0;34m(mountpoint, force_remount, timeout_ms, readonly)[0m
-[1;32m     99[0m [0;32mdef[0m [0mmount[0m[0;34m([0m[0mmountpoint[0m[0;34m,[0m [0mforce_remount[0m[0;34m=[0m[0;32mFalse[0m[0;34m,[0m [0mtimeout_ms[0m[0;34m=[0m[0;36m120000[0m[0;34m,[0m [0mreadonly[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    100[0m   [0;34m"""Mount your Google Drive at the specified mountpoint path."""[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 101[0;31m   return _mount(
-[0m[1;32m    102[0m       [0mmountpoint[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    103[0m       [0mforce_remount[0m[0;34m=[0m[0mforce_remount[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     98[0m [0;32mdef[0m [0mmount[0m[0;34m([0m[0mmountpoint[0m[0;34m,[0m [0mforce_remount[0m[0;34m=[0m[0;32mFalse[0m[0;34m,[0m [0mtimeout_ms[0m[0;34m=[0m[0;36m120000[0m[0;34m,[0m [0mreadonly[0m[0;34m=[0m[0;32mFalse[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     99[0m   [0;34m"""Mount your Google Drive at the specified mountpoint path."""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 100[0;31m   return _mount(
+[0m[1;32m    101[0m       [0mmountpoint[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    102[0m       [0mforce_remount[0m[0;34m=[0m[0mforce_remount[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.8/dist-packages/google/colab/drive.py[0m in [0;36m_mount[0;34m(mountpoint, force_remount, timeout_ms, ephemeral, readonly)[0m
-[1;32m    117[0m [0;34m[0m[0m
-[1;32m    118[0m   [0;32mif[0m [0;34m' '[0m [0;32min[0m [0mmountpoint[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 119[0;31m     [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m'Mountpoint must not contain a space.'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    120[0m [0;34m[0m[0m
-[1;32m    121[0m   metadata_server_addr = _os.environ[
+[1;32m    116[0m [0;34m[0m[0m
+[1;32m    117[0m   [0;32mif[0m [0;34m' '[0m [0;32min[0m [0mmountpoint[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 118[0;31m     [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m'Mountpoint must not contain a space.'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    119[0m [0;34m[0m[0m
+[1;32m    120[0m   metadata_server_addr = _os.environ[
 
 [0;31mValueError[0m: Mountpoint must not contain a space.
 ValueError: Mountpoint must not contain a space.
